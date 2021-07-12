@@ -19,6 +19,10 @@ An observation here is that the number of one coins can go up from returns but t
 
 I'll define the problem like this `minInsertions(c, n1, n5, n10)` where `c` is the number of cokes to be purchased, `n1` is the number of one coins, `n5` is the number of five coins, and `n10` is the number of ten coins.
 
-I think that if there is a ten coin available to purchase a coke, that that coin will always be used in the optimal solution. Thus
+(1) I think that if there is a ten coin available to purchase a coke, that that coin will always be used in the optimal solution. Thus
 
 ```minInsertions(c, n1, n5, n10) = minInsertions(c-n10, n1+2*n10, n5, 0) + n10```
+
+(2) I think that you will never take 8 one coins to purchase a coke unless there are no five or ten coins left.
+
+Assuming (1) and (2) are correct, the only decision to make is whether to take a five coin and 3 ones to make a purchase or 2 five coins.
